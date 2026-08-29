@@ -1,0 +1,448 @@
+:root {
+    --dark: #122042;
+    --primary: #1d3566;
+    --primary-hover: #164ce3;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+    --text: #334155;
+    --border: #555c66;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: var(--white);
+    padding: 1.5rem 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--dark);
+}
+
+header nav {
+    display: flex;
+    gap: 2rem;
+}
+
+header nav a {
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+
+header nav a:hover,
+header nav a:focus {
+    color: var(--primary);
+}
+
+#home,
+#rooms,
+#about,
+#contact {
+    scroll-margin-top: 100px;
+}
+
+.hero {
+    min-height: 85vh;
+    padding: 4rem 7%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background-color: var(--white);
+}
+
+.hero-text {
+    flex: 1;
+    animation: fadeIn 1s ease forwards;
+}
+
+.small-title {
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    color: var(--dark);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text > p {
+    max-width: 500px;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 1.7rem;
+    background-color: var(--dark);
+    color: var(--white);
+    border: 1px solid var(--dark);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    background-color: var(--primary);
+}
+
+.hero-image {
+    flex: 0 1 45%;
+    overflow: hidden;
+    animation: slideUp 1s ease forwards;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.03);
+}
+
+.jobs-section {
+    padding: 7rem 7%;
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    max-width: 650px;
+    margin-bottom: 4rem;
+}
+
+.section-title h2 {
+    color: var(--dark);
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.jobs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.job-card {
+    position: relative;
+    padding: 2rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background-color: var(--primary);
+    transition: height 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.08);
+}
+
+.job-card:hover::before {
+    height: 100%;
+}
+
+.job-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.job-category {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--primary);
+    background-color: #eff6ff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.job-icon {
+    font-size: 1.2rem;
+}
+
+.job-card h3 {
+    color: var(--dark);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.company {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.job-info {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.apply-button {
+    display: block;
+    text-align: center;
+    padding: 0.8rem;
+    background-color: var(--dark);
+    color: var(--white);
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+    background-color: var(--primary);
+}
+
+.about-section {
+    padding: 8rem 7%;
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5rem;
+}
+
+.about-image {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.03);
+}
+
+.about-content h2 {
+    color: var(--dark);
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    margin-bottom: 2rem;
+    color: var(--text);
+    font-size: 1.05rem;
+}
+
+.contact-section {
+    padding: 7rem 7%;
+    background-color: var(--bg-light);
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 3rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.contact-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--dark);
+    font-size: 0.95rem;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+    background-color: var(--bg-light);
+    font: inherit;
+    color: var(--dark);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.contact-section button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: var(--dark);
+    color: var(--white);
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-section button[type="submit"]:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: var(--dark);
+    color: #94a3b8;
+    padding: 3rem 7%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--white);
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+    .hero-text > p {
+        margin: 0 auto 2rem auto;
+    }
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.2rem 5%;
+    }
+    header nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .section-title h2,
+    .about-content h2 {
+        font-size: 2.2rem;
+    }
+    .contact-section form {
+        padding: 1.5rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
